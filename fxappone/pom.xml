@@ -40,15 +40,17 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
             </plugin>
-            <!--<plugin>
+            <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>${javafx-maven-plugin.version}</version>
                 <configuration>
                     <mainClass>${mainClass}</mainClass>
                 </configuration>
-            </plugin>-->
-            <plugin>
+            </plugin>
+
+            <!-- 着色插件，编译打包为Fat Jar，可通过 java -jar xxx.jar 方式运行 -->
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>${maven-shade-plugin.version}</version>
@@ -81,7 +83,9 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
+            
+            <!-- javapackager插件，打包并生成平台相关的可执行文件（如：windows: .exe; macOS: .dmg, .pkg; linux: .deb, rpm;） -->
             <!--<plugin>
                 <groupId>io.github.fvarrui</groupId>
                 <artifactId>javapackager</artifactId>
@@ -96,7 +100,7 @@
                             &lt;!&ndash; mandatory &ndash;&gt;
                             <mainClass>${mainClass}</mainClass>
                             &lt;!&ndash; optional &ndash;&gt;
-                            <bundleJre>false</bundleJre>
+                            <bundleJre>true</bundleJre>
                             <generateInstaller>true</generateInstaller>
                             <administratorRequired>false</administratorRequired>
                             <platform>mac</platform>
