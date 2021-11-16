@@ -39,6 +39,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.openjfx</groupId>
@@ -111,6 +115,22 @@
                     </execution>
                 </executions>
             </plugin>-->
+            <plugin>
+                <groupId>com.gluonhq</groupId>
+                <artifactId>gluonfx-maven-plugin</artifactId>
+                <version>1.0.9</version>
+                <configuration>
+                    <target>host</target>
+                    <mainClass>${mainClass}</mainClass>
+                    <graalvmHome>/Library/Java/JavaVirtualMachines/graalvm-ce-java11-21.3.0/Contents/Home/</graalvmHome>
+                    <bundlesList></bundlesList>
+                    <resourcesList></resourcesList>
+                    <reflectionList>
+                        <list>com.demos.fxappone.EntryMain</list>
+                        <list>com.demos.fxappone.MainApplication</list>
+                    </reflectionList>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
