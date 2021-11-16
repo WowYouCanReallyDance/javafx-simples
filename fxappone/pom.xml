@@ -115,6 +115,8 @@
                     </execution>
                 </executions>
             </plugin>-->
+
+            <!-- gluon插件，通过GraalVM将JavaFX项目编译打包成native-image即本地可执行文件 -->
             <plugin>
                 <groupId>com.gluonhq</groupId>
                 <artifactId>gluonfx-maven-plugin</artifactId>
