@@ -1,38 +1,45 @@
 package com.demos.fxappone;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class MainApplication extends Application {
+
+    private Button btn0;
+    private Button btn1;
+    private BorderPane bdp0;
+    private BorderPane bdp1;
+    private Scene scene0;
+    private Scene scene1;
+    private Stage stage;
+
+    @Override
+    public void init() throws Exception {
+        System.out.println("==================> Init runing... <==================");
+        btn0 = new Button();
+        btn0.setText("Click One");
+        btn0.setStyle("-fx-background-color: rgba(36, 99, 210, 0.5); -fx-min-width: 260px; -fx-min-height: 60px; -fx-background-radius: 30px;");
+        btn0.setOnAction(actionEvent -> stage.setScene(scene1));
+        btn1 = new Button();
+        btn1.setText("Click Two");
+        btn1.setStyle("-fx-background-color: rgba(210, 68, 192, 0.5); -fx-min-width: 260px; -fx-min-height: 120px; -fx-background-radius: 60px;");
+        btn1.setOnAction(actionEvent -> stage.setScene(scene0));
+
+        bdp0 = new BorderPane(btn0);
+        bdp1 = new BorderPane(btn1);
+
+        scene0 = new Scene(bdp0, 600, 500);
+        scene1 = new Scene(bdp1, 600, 500);
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
-
-        final Scene[] scenes = new Scene[1];
-        Button btn0 = new Button();
-        btn0.setText("Other Win");
-        btn0.setStyle("-fx-background-color: rgba(65, 32, 68, 0.5); -fx-border-radius: 15px; -fx-min-width: 200px; -fx-min-height: 30px;");
-        btn0.setOnAction(e -> {
-            Button btn = new Button();
-            btn.setText("Other Win");
-            btn.setStyle("-fx-background-color: rgba(200, 122, 36, 0.8); -fx-border-radius: 25px; -fx-min-width: 200px; -fx-min-height: 50px;");
-            btn.setOnAction(e1 -> stage.setScene(scenes[0]));
-            BorderPane bpn = new BorderPane(btn);
-            Scene scene0 = new Scene(bpn, 600, 500);
-            stage.setScene(scene0);
-        });
-
-        BorderPane bpn = new BorderPane(btn0);
-
-        scenes[0] = new Scene(bpn, 600, 500);
-
-        stage.setTitle("Test for javafx 17");
-        //stage.getIcons().add(new Image("image/logo-monster-pig-001.png"));
-        stage.setScene(scenes[0]);
+        System.out.println("==================> Start runing... <==================");
+        this.stage = stage;
+        stage.setScene(scene0);
         stage.show();
     }
 }
