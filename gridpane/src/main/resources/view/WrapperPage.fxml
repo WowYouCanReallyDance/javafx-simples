@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="401.0" prefWidth="600.0">
+         <children>
+            <MenuBar layoutY="1.0" prefHeight="14.0" prefWidth="600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="AskU">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About AskU" />
+                        <MenuItem mnemonicParsing="false" text="Run" />
+                        <MenuItem mnemonicParsing="false" text="Last One" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Open" />
+                        <MenuItem mnemonicParsing="false" text="Open As" />
+                        <MenuItem mnemonicParsing="false" text="Real Open here" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="How Do You Do?" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </Pane>
+   </children>
+</VBox>
